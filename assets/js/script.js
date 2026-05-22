@@ -502,12 +502,10 @@ finalizeBtn.addEventListener('click', async () => {
     if (isDelivery && !document.getElementById('delivery-accept').checked) return showToast('Debes aceptar que el costo del domicilio será confirmado por WhatsApp', 'warning');
 
     saveUserData();
-    const whatsappWindow = window.open('', '_blank');
     showLoading(finalizeBtn);
 
     const orderNumber = await getNextOrderNumber();
     if (!orderNumber) {
-        if (whatsappWindow) whatsappWindow.close();
         hideLoading(finalizeBtn);
         showToast('No se pudo generar el número de pedido. Intenta de nuevo.', 'error');
         return;
@@ -556,9 +554,9 @@ finalizeBtn.addEventListener('click', async () => {
         waMessage += `\n\n_¿Aceptas el costo del domicilio? Responde SÍ o NO_`;
     }
 
-    const whatsappUrl = `https://wa.me/573022942381?text=${encodeURIComponent(waMessage)}`;
-    if (whatsappWindow) {
-        whatsappWindow.location.href = whatsappUrl;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=573022942381&text=${encodeURIComponent(waMessage)}`;
+    if (/Android|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent)) {
+        window.location.href = whatsappUrl;
     } else {
         window.open(whatsappUrl, '_blank');
     }
