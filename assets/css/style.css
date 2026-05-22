@@ -240,34 +240,40 @@ nav ul li a:hover::after {
 
 /* Category Filter */
 .categories {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.8rem;
     margin-bottom: 3rem;
-    overflow-x: auto;
-    padding-bottom: 0.7rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
 }
 
 .category-btn {
-    flex: 0 0 auto;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
+    padding: 1rem 0.5rem;
+    border-radius: 16px;
     border: 1px solid var(--glass-border);
     background: var(--glass);
     color: var(--text);
     cursor: pointer;
     transition: var(--transition);
     font-weight: 500;
-    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    min-height: 88px;
+    text-align: center;
+}
+
+.category-btn .cat-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
 }
 
 .category-btn.active, .category-btn:hover {
     background: var(--primary-gradient);
     border-color: transparent;
     box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+    transform: translateY(-3px);
 }
 
 /* Product Grid */
@@ -1102,15 +1108,16 @@ footer {
         font-size: 2rem;
     }
     .categories {
-        gap: 0.5rem;
-        margin-left: -5%;
-        margin-right: -5%;
-        padding-left: 5%;
-        padding-right: 5%;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 0.6rem;
     }
     .category-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.8rem 0.4rem;
+        font-size: 0.78rem;
+        min-height: 76px;
+    }
+    .category-btn .cat-emoji {
+        font-size: 1.5rem;
     }
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -1191,11 +1198,16 @@ footer {
         font-size: 1.6rem;
     }
     .categories {
-        gap: 0.4rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
     }
     .category-btn {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.75rem;
+        padding: 0.7rem 0.3rem;
+        font-size: 0.72rem;
+        min-height: 70px;
+    }
+    .category-btn .cat-emoji {
+        font-size: 1.3rem;
     }
     .search-bar {
         margin: -0.5rem auto 1.5rem;

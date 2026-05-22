@@ -5,6 +5,7 @@ const menuData = {
         {
             id: 'hamburguesas',
             nombre: 'Hamburguesas',
+            emoji: '🍔',
             productos: [
                 { id: 'hamb-001', nombre: 'Clasica Res con Papa', precio: 18000, descripcion: '180g de carne de res, pan artesanal, tocineta, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.', disponible: true },
                 { id: 'hamb-002', nombre: 'Clasica Pollo con Papa', precio: 18000, descripcion: '180g de pechuga de pollo, pan artesanal, tocineta, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.', disponible: true },
@@ -17,6 +18,7 @@ const menuData = {
         {
             id: 'perros-calientes',
             nombre: 'Perros Calientes',
+            emoji: '🌭',
             productos: [
                 { id: 'perro-001', nombre: 'Sencillo', precio: 12000, descripcion: 'Salchicha sencilla, lechuga, cebolla grille, queso costeno, papa fosforito, salsas de la casa.', disponible: true },
                 { id: 'perro-002', nombre: 'Americano', precio: 18000, descripcion: 'Pan de 20cm, salchicha americana, lechuga, cebolla grille, queso costeno, papa fosforito, salsas de la casa.', disponible: true },
@@ -29,6 +31,7 @@ const menuData = {
         {
             id: 'salchipapas-familiares',
             nombre: 'Salchipapas Familiares',
+            emoji: '🍟',
             productos: [
                 { id: 'sfam-001', nombre: 'Media Samaria (2 personas)', precio: 35000, descripcion: 'Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeno, papas fosforito, maiz tierno, salsas de la casa.', disponible: true },
                 { id: 'sfam-002', nombre: 'Samaria (3 personas)', precio: 50000, descripcion: 'Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeno, papas fosforito, maiz tierno, salsas de la casa.', disponible: true },
@@ -39,6 +42,7 @@ const menuData = {
         {
             id: 'salchipapas',
             nombre: 'Salchipapas',
+            emoji: '🍟',
             productos: [
                 { id: 'salchi-001', nombre: 'Pequena', precio: 14000, descripcion: 'Papas a la francesa, salchicha, lechuga, cebolla grille, queso costeno, papas fosforito, salsas de la casa.', disponible: true },
                 { id: 'salchi-002', nombre: 'Grande', precio: 23000, descripcion: 'Papas a la francesa, salchicha, lechuga, cebolla grille, queso costeno, papas fosforito, salsas de la casa.', disponible: true },
@@ -51,6 +55,7 @@ const menuData = {
         {
             id: 'desgranados',
             nombre: 'Desgranados',
+            emoji: '🌽',
             productos: [
                 { id: 'desg-001', nombre: 'Tradicional', precio: 22000, descripcion: '250g de maiz tierno, pollo, queso costeno, queso mozzarella, tocineta, papas fosforito.', disponible: true },
                 { id: 'desg-002', nombre: 'Callejero', precio: 22000, descripcion: '250g de maiz tierno, salchicha ranchera, chorizo, butifarra, queso costeno, queso mozzarella, tocineta, papas fosforito.', disponible: true },
@@ -61,6 +66,7 @@ const menuData = {
         {
             id: 'sandwiches',
             nombre: 'Sandwiches',
+            emoji: '🥪',
             productos: [
                 { id: 'sand-001', nombre: 'Pollo', precio: 24000, descripcion: 'Pan arabe, lechuga, tomate, cebolla grille, pollo desmechado, queso doble crema y salsas de la casa. Incluye papa a la francesa.', disponible: true },
                 { id: 'sand-002', nombre: 'Mixto', precio: 28000, descripcion: 'Pan arabe, lechuga, tomate, cebolla grille, pollo y carne de res desmechados, queso doble crema y salsas de la casa. Incluye papa a la francesa.', disponible: true }
@@ -69,6 +75,7 @@ const menuData = {
         {
             id: 'arepa-picada',
             nombre: 'Arepa Picada',
+            emoji: '🫓',
             productos: [
                 { id: 'arepa-001', nombre: 'Pollo', precio: 20000, descripcion: 'Pollo, arepa, papas fosforito, queso costeno, maiz tierno, salsas de la casa.', disponible: true },
                 { id: 'arepa-002', nombre: 'Pollo Tocineta', precio: 22000, descripcion: 'Pollo, arepa, tocineta, papas fosforito, queso costeno, maiz tierno, salsas de la casa.', disponible: true },
@@ -79,6 +86,7 @@ const menuData = {
         {
             id: 'chuzo-pan',
             nombre: 'Chuzo Pan',
+            emoji: '🍢',
             productos: [
                 { id: 'chuzo-001', nombre: 'Chorizo', precio: 22000, descripcion: 'Pan de 20cm, chorizo, lechuga, cebolla, tocineta, maiz tierno, queso costeno, papas fosforito, queso mozzarella, salsas de la casa.', disponible: true },
                 { id: 'chuzo-002', nombre: 'Pollo', precio: 23000, descripcion: 'Pan de 20cm, pollo, lechuga, cebolla, tocineta, maiz tierno, queso costeno, papas fosforito, queso mozzarella, salsas de la casa.', disponible: true },
@@ -92,6 +100,7 @@ const menuData = {
         {
             id: 'asados',
             nombre: 'Asados',
+            emoji: '🔥',
             productos: [
                 { id: 'asado-001', nombre: 'Pollo', precio: 23000, descripcion: 'Filete de pechuga, papas a la francesa, ensalada con maiz tierno.', disponible: true },
                 { id: 'asado-002', nombre: 'Res', precio: 25000, descripcion: 'Carne de res, papas a la francesa, ensalada con maiz tierno.', disponible: true },
@@ -101,6 +110,7 @@ const menuData = {
         {
             id: 'patacones',
             nombre: 'Patacones',
+            emoji: '🍌',
             productos: [
                 { id: 'pata-001', nombre: 'Pollo', precio: 18000, descripcion: 'Patacon de platano, lechuga, cebolla grille, pollo, queso costeno, papas fosforito, queso mozzarella, tocineta, salsas de la casa.', disponible: true },
                 { id: 'pata-002', nombre: 'Mixto', precio: 20000, descripcion: 'Patacon de platano, lechuga, cebolla grille, pollo, carne de res, queso costeno, papas fosforito, queso mozzarella, tocineta, salsas de la casa.', disponible: true },
@@ -110,6 +120,7 @@ const menuData = {
         {
             id: 'pizzas',
             nombre: 'Pizzas',
+            emoji: '🍕',
             productos: [
                 { id: 'pizza-001', nombre: 'Margarita (Pequena)', precio: 20000, descripcion: 'Tomate, albahaca fresca, mozzarella.', disponible: true },
                 { id: 'pizza-002', nombre: 'Margarita (Mediana)', precio: 32000, descripcion: 'Tomate, albahaca fresca, mozzarella.', disponible: true },
@@ -136,6 +147,7 @@ const menuData = {
         {
             id: 'bebidas',
             nombre: 'Bebidas',
+            emoji: '🥤',
             productos: [
                 { id: 'beb-001', nombre: 'Coca-Cola PET 400ml', precio: 3500, descripcion: 'Coca-Cola personal 400ml.', disponible: true },
                 { id: 'beb-002', nombre: 'Coca-Cola 1.5L', precio: 7500, descripcion: 'Coca-Cola familiar 1.5 litros.', disponible: true },

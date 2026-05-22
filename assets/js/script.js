@@ -229,9 +229,9 @@ function displayProducts(category) {
 function renderCategoryButtons() {
     if (!categoriesContainer || typeof menuData === 'undefined') return;
     categoriesContainer.innerHTML = [
-        '<button class="category-btn active" data-category="todos">Todos</button>',
+        '<button class="category-btn active" data-category="todos"><span class="cat-emoji">📋</span><span class="cat-name">Todos</span></button>',
         ...menuData.categorias.map(category =>
-            `<button class="category-btn" data-category="${category.id}">${category.nombre}</button>`
+            `<button class="category-btn" data-category="${category.id}"><span class="cat-emoji">${category.emoji || '📋'}</span><span class="cat-name">${category.nombre}</span></button>`
         )
     ].join('');
     categoryBtns = document.querySelectorAll('.category-btn');
