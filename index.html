@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LA SAMARIA | Sabor costeño</title>
+    <meta
+      name="description"
+      content="LA SAMARIA - Especialistas en comidas rápidas con sabor costeño: salchipapas, hamburguesas, perros calientes y más."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="LA SAMARIA" />
+        <span>LA SAMARIA</span>
+        <div id="status-badge" class="status-badge">Cargando...</div>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon" id="cart-icon" role="button" aria-label="Abrir carrito" tabindex="0">
+        <i class="fas fa-shopping-basket"></i>
+        <span class="cart-count">0</span>
+      </div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+    <section class="hero" id="hero">
+      <div class="hero-content animate-fade">
+        <h1>Sabor que grita</h1>
+        <p>
+          LA SAMARIA — Especialistas en comidas rápidas con sabor costeño.
+          Ingredientes frescos, porciones generosas y el sabor que estabas
+          buscando en un solo lugar.
+        </p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-primary">Ver Menú</a>
+          <a href="#contacto" class="btn glass hero__btn hero__btn--secondary">Contáctanos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+      <div class="section-title">
+        <h2>Nuestro Menú</h2>
+        <div class="underline"></div>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="categories">
+        <!-- Categories injected by JS from menuData -->
+      </div>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Buscar producto..." autocomplete="off" />
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- Products will be injected here by JS -->
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h3>Tu Pedido</h3>
+        <span class="close-cart" id="close-cart">&times;</span>
+      </div>
+      <div class="cart-scroll-area">
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items injected by JS -->
+        </div>
+
+        <div class="checkout-form">
+          <h4>Datos de Entrega</h4>
+          <select id="delivery-type">
+            <option value="domicilio">🛵 Envío a Domicilio</option>
+            <option value="recoger">🚶‍♂️ Recoger en el Local</option>
+          </select>
+          <input
+            type="text"
+            id="client-name"
+            placeholder="Tu Nombre"
+            required
+          />
+          <input
+            type="tel"
+            id="client-phone"
+            placeholder="Tu Teléfono"
+            required
+          />
+          <div id="address-container">
+            <input
+              type="text"
+              id="client-address"
+              placeholder="Dirección de entrega"
+              required
+            />
+          </div>
+          <select id="payment-method">
+            <option value="Efectivo">💵 Efectivo</option>
+            <option value="Nequi/Daviplata">📱 Nequi / Daviplata</option>
+            <option value="Transferencia">🏦 Transferencia Bancaria</option>
+            <option value="Datafono">💳 Datáfono</option>
+          </select>
+          <textarea
+            id="order-notes"
+            placeholder="Notas adicionales (ej: sin cebolla)"
+          ></textarea>
+          <label class="delivery-check">
+            <input type="checkbox" id="delivery-accept" />
+            Entiendo que el costo del domicilio se confirmará por WhatsApp y acepto pagarlo
+          </label>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="total">
+          <span>Subtotal:</span>
+          <span id="cart-total">$0</span>
+        </div>
+        <div class="delivery-notice">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>El valor del domicilio <strong>no está incluido</strong> en el total. Te lo confirmaremos por WhatsApp según tu ubicación.</p>
+        </div>
+
+        <button class="btn btn-primary cart__submit-btn" id="finalize-btn">
+          Finalizar Pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="menu-section about" id="nosotros">
+      <div class="section-title">
+        <h2>Nuestra Historia</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="about__layout">
+        <div class="about__image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600"
+            alt="Cocina de LA SAMARIA"
+            class="about__image"
+          />
+        </div>
+        <div class="about__content">
+          <h3 class="about__title">El sabor costeño que provoca</h3>
+          <p class="about__text">
+            LA SAMARIA nació con una misión clara: traerte comidas rápidas
+            con sabor costeño, ingredientes frescos, porciones generosas y
+            un sabor que habla por sí solo.
+          </p>
+          <p class="about__text">
+            Desde nuestras hamburguesas hasta nuestras salchipapas, cada
+            plato está preparado con amor por la comida y el toque samario
+            que nos hace únicos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="menu-section" id="contacto">
+      <div class="section-title">
+        <h2>Contáctanos</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="contact-form__wrapper">
+        <form id="contact-form" class="contact-form__grid">
+          <div class="contact-form__row">
+            <input
+              type="text"
+              id="contact-name"
+              placeholder="Nombre"
+              required
+              class="contact-form__input"
+            />
+            <input
+              type="email"
+              id="contact-email"
+              placeholder="Email"
+              required
+              class="contact-form__input"
+            />
+          </div>
+          <input
+            type="text"
+            id="contact-subject"
+            placeholder="Asunto"
+            required
+            class="contact-form__input"
+          />
+          <textarea
+            id="contact-message"
+            placeholder="Mensaje"
+            rows="5"
+            required
+            class="contact-form__input"
+          ></textarea>
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirm-modal">
+      <div class="modal-content">
+        <div class="modal-icon">&#10003;</div>
+        <h2>Pedido Confirmado</h2>
+        <p>Tu pedido <strong>#<span id="order-number">0</span></strong> ha sido recibido.</p>
+        <div class="modal-details" id="modal-details">
+          <div class="modal-detail-row"><span>Tipo:</span><span id="modal-type">—</span></div>
+          <div class="modal-detail-row"><span>Productos:</span><span id="modal-items">—</span></div>
+          <div class="modal-detail-row modal-detail-total"><span>Total:</span><span id="modal-total">$0</span></div>
+        </div>
+        <p class="modal__description">
+          Te contactaremos por WhatsApp para confirmar el tiempo de entrega.
+        </p>
+        <button class="btn btn-primary modal__btn" id="close-modal-btn">
+          Seguir Viendo el Menú
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo footer__logo">
+            <span>LA SAMARIA</span>
+          </div>
+          <p>
+            Comidas rápidas con sabor costeño. Sabor, rapidez y calidad en
+            cada bocado.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Categorías</h4>
+          <div id="footer-categories"></div>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Bucaramanga, Colombia</p>
+          <p><i class="fas fa-phone"></i> <a href="https://wa.me/573022942381" target="_blank" rel="noopener">+57 302 294 2381</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:contacto@lasamaria.com">contacto@lasamaria.com</a></p>
+        </div>
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 LA SAMARIA. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

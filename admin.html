@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA SAMARIA — Panel de Pedidos</title>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/admin.css" />
+</head>
+<body class="auth-checking">
+  <div class="admin-header">
+    <div>
+      <h1 class="admin-header__title">LA SAMARIA</h1>
+      <p class="admin-header__subtitle">Panel de Pedidos — Tiempo Real</p>
+      <p class="admin-user" id="admin-user"></p>
+    </div>
+    <button class="logout-btn" id="logout-btn" type="button"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+    <div class="admin-stats">
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="total-periodo">$0</div>
+        <div class="admin-stats__label">Ventas Periodo</div>
+      </div>
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="count-nuevos">0</div>
+        <div class="admin-stats__label">Nuevos</div>
+      </div>
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="count-pendientes">0</div>
+        <div class="admin-stats__label">En Preparación</div>
+      </div>
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="count-entregados">0</div>
+        <div class="admin-stats__label">Entregados</div>
+      </div>
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="count-cancelados">0</div>
+        <div class="admin-stats__label">Cancelados</div>
+      </div>
+      <div class="admin-stats__box">
+        <div class="admin-stats__number" id="ticket-promedio">$0</div>
+        <div class="admin-stats__label">Ticket Promedio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-toolbar">
+    <div>
+      <p class="admin-toolbar__label">Periodo</p>
+      <div class="admin-filters" aria-label="Filtrar pedidos por fecha">
+        <button class="admin-date-filter active" type="button" data-range="hoy">Hoy</button>
+        <button class="admin-date-filter" type="button" data-range="ayer">Ayer</button>
+        <button class="admin-date-filter" type="button" data-range="semana">Semana</button>
+        <button class="admin-date-filter" type="button" data-range="mes">Mes</button>
+        <button class="admin-date-filter" type="button" data-range="todos">Todos</button>
+      </div>
+    </div>
+    <button class="btn--csv" onclick="window.exportCSV()" type="button"><i class="fas fa-file-csv"></i> Exportar CSV</button>
+  </div>
+
+  <div class="admin-stats admin-stats--pagos" id="pagos-stats">
+    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-efectivo">$0</div><div class="admin-stats__label">Efectivo</div></div>
+    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-nequi">$0</div><div class="admin-stats__label">Nequi / Daviplata</div></div>
+    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-transferencia">$0</div><div class="admin-stats__label">Transferencia</div></div>
+    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-datafono">$0</div><div class="admin-stats__label">Datáfono</div></div>
+  </div>
+
+  <div class="admin-filters" aria-label="Filtrar pedidos por estado">
+    <button class="admin-filter active" type="button" data-filter="todos">Todos</button>
+    <button class="admin-filter" type="button" data-filter="nuevo">Nuevos</button>
+    <button class="admin-filter" type="button" data-filter="preparacion">En preparación</button>
+    <button class="admin-filter" type="button" data-filter="listo">Listos</button>
+    <button class="admin-filter" type="button" data-filter="entregado">Entregados</button>
+    <button class="admin-filter" type="button" data-filter="cancelado">Cancelados</button>
+  </div>
+
+  <div class="orders-grid" id="orders-grid">
+    <div class="empty-state">
+      <i class="fas fa-clock"></i>
+      <p>Esperando pedidos...</p>
+    </div>
+  </div>
+
+  <div class="section-divider"><i class="fas fa-envelope"></i> Mensajes de Contacto</div>
+  <div class="orders-grid" id="contacts-grid">
+    <div class="empty-state">
+      <i class="fas fa-inbox"></i>
+      <p>No hay mensajes aun</p>
+    </div>
+  </div>
+
+  <p class="admin-footer">Los pedidos aparecen automaticamente en tiempo real</p>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

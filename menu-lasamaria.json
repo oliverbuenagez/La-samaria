@@ -1,0 +1,680 @@
+{
+  "restaurante": "LA SAMARIA",
+  "slogan": "Especialistas en Comidas Rápidas - Con el Sabor Costeño",
+  "categorias": [
+    {
+      "id": "hamburguesas",
+      "nombre": "Hamburguesas",
+      "emoji": "🍔",
+      "productos": [
+        {
+          "id": "hamb-001",
+          "nombre": "Clásica Res con Papa",
+          "precio": 18000,
+          "descripcion": "180g de carne de res, pan artesanal, tocineta, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "hamb-002",
+          "nombre": "Clásica Pollo con Papa",
+          "precio": 18000,
+          "descripcion": "180g de pechuga de pollo, pan artesanal, tocineta, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "hamb-003",
+          "nombre": "Criolla con Papa",
+          "precio": 25000,
+          "descripcion": "180g de carne de res, pan artesanal, tocineta, huevo, chorizo, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "hamb-004",
+          "nombre": "Tijuana con Papa",
+          "precio": 25000,
+          "descripcion": "180g de carne de res, pan artesanal, tocineta, queso cheddar, pico e gallo, nachos, jalapeños, maíz tierno, guacamole, lechuga.",
+          "disponible": true
+        },
+        {
+          "id": "hamb-005",
+          "nombre": "Doble Carne con Papa",
+          "precio": 25000,
+          "descripcion": "2x100g de carne de res, pan artesanal, tocineta, queso cheddar, salsa cheddar, lechuga, tomate, cebolla grille, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "hamb-006",
+          "nombre": "Mixta con Papa",
+          "precio": 27000,
+          "descripcion": "100g de carne de res, 100g de pechuga, chorizo, pan artesanal, tocineta, queso cheddar, lechuga, tomate, cebolla grille, salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "perros-calientes",
+      "nombre": "Perros Calientes",
+      "emoji": "🌭",
+      "productos": [
+        {
+          "id": "perro-001",
+          "nombre": "Sencillo",
+          "precio": 12000,
+          "descripcion": "Salchicha sencilla, lechuga, cebolla grille, queso costeño, papa fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "perro-002",
+          "nombre": "Americano",
+          "precio": 18000,
+          "descripcion": "Pan de 20cm, salchicha americana, lechuga, cebolla grille, queso costeño, papa fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "perro-003",
+          "nombre": "Perrón",
+          "precio": 22000,
+          "descripcion": "Pan de 20cm, chorizo, tocineta, pico e gallo, nachos, maíz tierno, queso cheddar, guacamole, papas fosforito.",
+          "disponible": true
+        },
+        {
+          "id": "perro-004",
+          "nombre": "Mini Samario",
+          "precio": 24000,
+          "descripcion": "Pan de 20cm, salchicha sencilla, chorizo, butifarra, salchicha ranchera, carne de res, pollo, lechuga, cebolla grille, queso fundido con maíz tierno.",
+          "disponible": true
+        },
+        {
+          "id": "perro-005",
+          "nombre": "Samario",
+          "precio": 35000,
+          "descripcion": "2 panes de 33cm, salchicha sencilla, chorizo, butifarra, salchicha ranchera, carne de res, pollo, lechuga, cebolla grille, queso fundido con maíz tierno.",
+          "disponible": true
+        },
+        {
+          "id": "perro-006",
+          "nombre": "Napolitano",
+          "precio": 20000,
+          "descripcion": "Pan de 20cm, salchicha americana, lechuga, cebolla grille, queso fundido, papas fosforito, salsa napolitana de la casa, pepperoni, salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "salchipapas-familiares",
+      "nombre": "Salchipapas Familiares",
+      "emoji": "🍟",
+      "productos": [
+        {
+          "id": "sfam-001",
+          "nombre": "½ Samaria (2 personas)",
+          "precio": 35000,
+          "descripcion": "Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeño, papas fosforito, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "sfam-002",
+          "nombre": "Samaria (3 personas)",
+          "precio": 50000,
+          "descripcion": "Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeño, papas fosforito, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "sfam-003",
+          "nombre": "Tronco de Samaria (5 personas)",
+          "precio": 60000,
+          "descripcion": "Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeño, papas fosforito, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "sfam-004",
+          "nombre": "Sierra Nevada (8 personas)",
+          "precio": 100000,
+          "descripcion": "Papas a la francesa, salchicha, butifarra, chorizo, pollo, carne de res, cerdo, lechuga, cebolla grille, queso costeño, papas fosforito, maíz tierno, salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "salchipapas",
+      "nombre": "Salchipapas",
+      "emoji": "🍟",
+      "productos": [
+        {
+          "id": "salchi-001",
+          "nombre": "Pequeña",
+          "precio": 14000,
+          "descripcion": "Papas a la francesa, salchicha, lechuga, cebolla grille, queso costeño, papas fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "salchi-002",
+          "nombre": "Grande",
+          "precio": 23000,
+          "descripcion": "Papas a la francesa, salchicha, lechuga, cebolla grille, queso costeño, papas fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "salchi-003",
+          "nombre": "Choripapa",
+          "precio": 24000,
+          "descripcion": "Papas a la francesa, chorizo, lechuga, cebolla grille, queso costeño, papas fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "salchi-004",
+          "nombre": "Mixta",
+          "precio": 26000,
+          "descripcion": "Papas a la francesa, salchicha, pollo, butifarra, chorizo, salchicha ranchera, lechuga, cebolla grille, queso costeño, papas fosforito, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "salchi-005",
+          "nombre": "Coronada",
+          "precio": 32000,
+          "descripcion": "Papas a la francesa, salchicha, pollo, carne de res, queso costeño, papas fosforito, tocineta, aros de cebolla, queso mozzarella fundido, lechuga, cebolla, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "salchi-006",
+          "nombre": "Salchipaisa",
+          "precio": 30000,
+          "descripcion": "Papas a la francesa, salchicha sencilla, chorizo, arepa de maíz peto, plátanos maduros, chicharrón carnudo, maíz tierno, pico e gallo, guacamole, lechuga, queso y salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "desgranados",
+      "nombre": "Desgranados",
+      "emoji": "🌽",
+      "productos": [
+        {
+          "id": "desg-001",
+          "nombre": "Tradicional",
+          "precio": 22000,
+          "descripcion": "250g de maíz tierno, pollo, queso costeño, queso mozzarella, tocineta, papas fosforito.",
+          "disponible": true
+        },
+        {
+          "id": "desg-002",
+          "nombre": "Callejero",
+          "precio": 22000,
+          "descripcion": "250g de maíz tierno, salchicha ranchera, chorizo, butifarra, queso costeño, queso mozzarella, tocineta, papas fosforito.",
+          "disponible": true
+        },
+        {
+          "id": "desg-003",
+          "nombre": "Mixto",
+          "precio": 25000,
+          "descripcion": "250g de maíz tierno, pollo, carne de res, queso costeño, queso mozzarella, tocineta, papas fosforito.",
+          "disponible": true
+        },
+        {
+          "id": "desg-004",
+          "nombre": "Samario",
+          "precio": 31000,
+          "descripcion": "250g de maíz tierno, pollo, carne de res, salchicha ranchera, chorizo, butifarra, queso costeño, queso mozzarella, tocineta, papas fosforito.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "nombre": "Sandwiches",
+      "emoji": "🥪",
+      "nota": "Todos incluyen porción de papa a la francesa.",
+      "productos": [
+        {
+          "id": "sand-001",
+          "nombre": "Pollo",
+          "precio": 24000,
+          "descripcion": "Pan árabe, lechuga, tomate, cebolla grille, pollo desmechado, queso doble crema y salsas de la casa. Incluye papa a la francesa.",
+          "disponible": true
+        },
+        {
+          "id": "sand-002",
+          "nombre": "Mixto",
+          "precio": 28000,
+          "descripcion": "Pan árabe, lechuga, tomate, cebolla grille, pollo y carne de res desmechados, queso doble crema y salsas de la casa. Incluye papa a la francesa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "arepa-picada",
+      "nombre": "Arepa Picada",
+      "emoji": "🫓",
+      "productos": [
+        {
+          "id": "arepa-001",
+          "nombre": "Pollo",
+          "precio": 20000,
+          "descripcion": "Pollo, arepa, papas fosforito, queso costeño, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "arepa-002",
+          "nombre": "Pollo Tocineta",
+          "precio": 22000,
+          "descripcion": "Pollo, arepa, tocineta, papas fosforito, queso costeño, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "arepa-003",
+          "nombre": "Mixta",
+          "precio": 24000,
+          "descripcion": "Carne de res, pollo, arepa, papas fosforito, queso costeño, maíz tierno, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "arepa-004",
+          "nombre": "Samaria",
+          "precio": 27000,
+          "descripcion": "Carne de res, pollo, chorizo, butifarra, arepa, papas fosforito, queso costeño, maíz tierno, salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "chuzo-pan",
+      "nombre": "Chuzo Pan",
+      "emoji": "🍢",
+      "productos": [
+        {
+          "id": "chuzo-001",
+          "nombre": "Chorizo",
+          "precio": 22000,
+          "descripcion": "Pan de 20cm, chorizo, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-002",
+          "nombre": "Pollo",
+          "precio": 23000,
+          "descripcion": "Pan de 20cm, pollo, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-003",
+          "nombre": "Ranchero",
+          "precio": 25000,
+          "descripcion": "Pan de 20cm, salchicha ranchera, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-004",
+          "nombre": "Pollo / Res",
+          "precio": 25000,
+          "descripcion": "Pan de 20cm, pollo, carne de res, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-005",
+          "nombre": "Trifásico",
+          "precio": 26000,
+          "descripcion": "Pan de 20cm, carne de res, cerdo, pollo, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-006",
+          "nombre": "Samario",
+          "precio": 27000,
+          "descripcion": "Pan de 20cm, carne de res, cerdo, pollo, chorizo, butifarra ranchera, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "chuzo-007",
+          "nombre": "Samario Salvaje",
+          "precio": 35000,
+          "descripcion": "Pan de 20cm, carne de res, cerdo, pollo, chorizo, butifarra ranchera, lechuga, cebolla, tocineta, maíz tierno, queso costeño, papas fosforito, queso mozzarella, salsas de la casa. Porción extra.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "asados",
+      "nombre": "Asados",
+      "emoji": "🔥",
+      "productos": [
+        {
+          "id": "asado-001",
+          "nombre": "Pollo",
+          "precio": 23000,
+          "descripcion": "Filete de pechuga, papas a la francesa, ensalada con maíz tierno.",
+          "disponible": true
+        },
+        {
+          "id": "asado-002",
+          "nombre": "Res",
+          "precio": 25000,
+          "descripcion": "Carne de res, papas a la francesa, ensalada con maíz tierno.",
+          "disponible": true
+        },
+        {
+          "id": "asado-003",
+          "nombre": "Mixto",
+          "precio": 30000,
+          "descripcion": "Carne de res, filete de pechuga, chorizo, cerdo, papas a la francesa, ensalada con maíz tierno.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "patacones",
+      "nombre": "Patacones",
+      "emoji": "🍌",
+      "productos": [
+        {
+          "id": "pata-001",
+          "nombre": "Pollo",
+          "precio": 18000,
+          "descripcion": "Patacón de plátano, lechuga, cebolla grille, pollo, queso costeño, papas fosforito, queso mozzarella, tocineta, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "pata-002",
+          "nombre": "Mixto",
+          "precio": 20000,
+          "descripcion": "Patacón de plátano, lechuga, cebolla grille, pollo, carne de res, queso costeño, papas fosforito, queso mozzarella, tocineta, salsas de la casa.",
+          "disponible": true
+        },
+        {
+          "id": "pata-003",
+          "nombre": "Samario",
+          "precio": 25000,
+          "descripcion": "Patacón de plátano, lechuga, cebolla grille, pollo, carne de res, chorizo, butifarra, salchicha ranchera, queso costeño, papas fosforito, queso mozzarella, tocineta, salsas de la casa.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "pizzas",
+      "nombre": "Pizzas",
+      "emoji": "🍕",
+      "nota": "Las medianas se pueden combinar con 2 sabores, se cobra el de mayor valor.",
+      "productos": [
+        {
+          "id": "pizza-001",
+          "nombre": "Margarita (Pequeña)",
+          "precio": 20000,
+          "descripcion": "Tomate, albahaca fresca, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-002",
+          "nombre": "Margarita (Mediana)",
+          "precio": 32000,
+          "descripcion": "Tomate, albahaca fresca, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-003",
+          "nombre": "Jamón y Queso (Pequeña)",
+          "precio": 20000,
+          "descripcion": "Jamón y queso mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-004",
+          "nombre": "Jamón y Queso (Mediana)",
+          "precio": 34000,
+          "descripcion": "Jamón y queso mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-005",
+          "nombre": "Vegetariana (Pequeña)",
+          "precio": 20000,
+          "descripcion": "Tomate, pimentón, cebolla, maíz tierno, champiñones, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-006",
+          "nombre": "Vegetariana (Mediana)",
+          "precio": 37000,
+          "descripcion": "Tomate, pimentón, cebolla, maíz tierno, champiñones, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-007",
+          "nombre": "Hawaiana (Pequeña)",
+          "precio": 22000,
+          "descripcion": "Salsa de tomate, mozzarella, jamón, piña.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-008",
+          "nombre": "Hawaiana (Mediana)",
+          "precio": 40000,
+          "descripcion": "Salsa de tomate, mozzarella, jamón, piña.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-009",
+          "nombre": "Pepperoni (Pequeña)",
+          "precio": 24000,
+          "descripcion": "Salsa de tomate, mozzarella, pepperoni.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-010",
+          "nombre": "Pepperoni (Mediana)",
+          "precio": 42000,
+          "descripcion": "Salsa de tomate, mozzarella, pepperoni.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-011",
+          "nombre": "Paisa (Pequeña)",
+          "precio": 22000,
+          "descripcion": "Chorizo, jamón, maíz tierno, tocineta.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-012",
+          "nombre": "Paisa (Mediana)",
+          "precio": 42000,
+          "descripcion": "Chorizo, jamón, maíz tierno, tocineta.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-013",
+          "nombre": "Pollo Champiñones (Pequeña)",
+          "precio": 24000,
+          "descripcion": "Pollo, champiñones, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-014",
+          "nombre": "Pollo Champiñones (Mediana)",
+          "precio": 42000,
+          "descripcion": "Pollo, champiñones, mozzarella.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-015",
+          "nombre": "Mexicana (Pequeña)",
+          "precio": 25000,
+          "descripcion": "Carne desmechada, pico e gallo, maíz tierno, nachos, cabano, guacamole.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-016",
+          "nombre": "Mexicana (Mediana)",
+          "precio": 42000,
+          "descripcion": "Carne desmechada, pico e gallo, maíz tierno, nachos, cabano, guacamole.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-017",
+          "nombre": "Carnívora (Pequeña)",
+          "precio": 25000,
+          "descripcion": "Carne de res, pollo, chorizo, butifarra, cabanos, tocineta.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-018",
+          "nombre": "Carnívora (Mediana)",
+          "precio": 44000,
+          "descripcion": "Carne de res, pollo, chorizo, butifarra, cabanos, tocineta.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-019",
+          "nombre": "Samaria (Pequeña)",
+          "precio": 25000,
+          "descripcion": "Carne, pollo, chorizo, butifarra, salchicha ranchera, cabano, maíz tierno, cebolla.",
+          "disponible": true
+        },
+        {
+          "id": "pizza-020",
+          "nombre": "Samaria (Mediana)",
+          "precio": 44000,
+          "descripcion": "Carne, pollo, chorizo, butifarra, salchicha ranchera, cabano, maíz tierno, cebolla.",
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas",
+      "emoji": "🥤",
+      "productos": [
+        {
+          "id": "beb-001",
+          "nombre": "Coca-Cola PET 400ml",
+          "precio": 3500,
+          "descripcion": "Coca-Cola personal 400ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-002",
+          "nombre": "Coca-Cola 1.5L",
+          "precio": 7500,
+          "descripcion": "Coca-Cola familiar 1.5 litros.",
+          "disponible": true
+        },
+        {
+          "id": "beb-003",
+          "nombre": "Coca-Cola 3L",
+          "precio": 12000,
+          "descripcion": "Coca-Cola familiar 3 litros.",
+          "disponible": true
+        },
+        {
+          "id": "beb-004",
+          "nombre": "Postobón PET 400ml",
+          "precio": 3500,
+          "descripcion": "Postobón personal 400ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-005",
+          "nombre": "Postobón Econolitro",
+          "precio": 5000,
+          "descripcion": "Postobón econolitro.",
+          "disponible": true
+        },
+        {
+          "id": "beb-006",
+          "nombre": "Postobón 1.5L",
+          "precio": 6000,
+          "descripcion": "Postobón 1.5 litros.",
+          "disponible": true
+        },
+        {
+          "id": "beb-007",
+          "nombre": "Postobón 2.5L",
+          "precio": 7000,
+          "descripcion": "Postobón 2.5 litros.",
+          "disponible": true
+        },
+        {
+          "id": "beb-008",
+          "nombre": "Hit PET 500ml",
+          "precio": 3000,
+          "descripcion": "Jugo Hit personal 500ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-009",
+          "nombre": "Hit 1.5L",
+          "precio": 7000,
+          "descripcion": "Jugo Hit 1.5 litros.",
+          "disponible": true
+        },
+        {
+          "id": "beb-010",
+          "nombre": "Bretaña",
+          "precio": 3000,
+          "descripcion": "Bretaña.",
+          "disponible": true
+        },
+        {
+          "id": "beb-011",
+          "nombre": "Mr Tea 500ml",
+          "precio": 3000,
+          "descripcion": "Mr Tea 500ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-012",
+          "nombre": "Agua 600ml",
+          "precio": 2000,
+          "descripcion": "Agua pura 600ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-013",
+          "nombre": "Agua 1L",
+          "precio": 3000,
+          "descripcion": "Agua pura 1 litro.",
+          "disponible": true
+        },
+        {
+          "id": "beb-014",
+          "nombre": "Agua con Gas 600ml",
+          "precio": 2500,
+          "descripcion": "Agua con gas 600ml.",
+          "disponible": true
+        },
+        {
+          "id": "beb-015",
+          "nombre": "Águila",
+          "precio": 4000,
+          "descripcion": "Cerveza Águila.",
+          "disponible": true
+        },
+        {
+          "id": "beb-016",
+          "nombre": "Póker",
+          "precio": 4000,
+          "descripcion": "Cerveza Póker.",
+          "disponible": true
+        },
+        {
+          "id": "beb-017",
+          "nombre": "Coronita",
+          "precio": 4000,
+          "descripcion": "Cerveza Coronita.",
+          "disponible": true
+        },
+        {
+          "id": "beb-018",
+          "nombre": "Club Colombia",
+          "precio": 4500,
+          "descripcion": "Cerveza Club Colombia.",
+          "disponible": true
+        },
+        {
+          "id": "beb-019",
+          "nombre": "Heineken",
+          "precio": 3500,
+          "descripcion": "Cerveza Heineken.",
+          "disponible": true
+        }
+      ]
+    }
+  ]
+}
