@@ -92,7 +92,7 @@
         const status = STATUS_MAP[data.estado] || STATUS_MAP.nuevo;
 
         const card = document.createElement('div');
-        card.className = 'order-card';
+        card.className = 'order-card order-card--' + (data.estado || 'nuevo');
         card.dataset.id = id;
         card.dataset.estado = data.estado;
 
@@ -294,6 +294,37 @@
         link.download = 'pedidos-' + new Date().toISOString().slice(0, 10) + '.csv';
         link.click();
         URL.revokeObjectURL(link.href);
+    };
+
+    window.resetAllData = async function () {
+        if (!confirm('\u00bfEst\u00e1s seguro? Se borrar\u00e1n TODOS los pedidos, contactos y se reiniciar\u00e1 el contador. Esta acci\u00f3n NO se puede deshacer.')) return;
+        if (!confirm('\u00bfRealmente est\u00e1s seguro? Esta es tu \u00faltima oportunidad.')) return;
+
+        try {
+            // 1. Borrar pedidos
+            var pedidosSnap = await db.collection('pedidos').get();
+            if (!pedidosSnap.empty) {
+                var batch = db.batch();
+                pedidosSnap.forEach(function (doc) { batch.delete(doc.ref); });
+                await batch.commit();
+            }
+
+            // 2. Resetear contador
+            await db.collection('contadores').doc('pedidos').set({ ultimo: 0 });
+
+            // 3. Borrar contactos
+            var contactosSnap = await db.collection('contactos').get();
+            if (!contactosSnap.empty) {
+                var batch2 = db.batch();
+                contactosSnap.forEach(function (doc) { batch2.delete(doc.ref); });
+                await batch2.commit();
+            }
+
+            alert('Datos reiniciados correctamente. Todos los pedidos y contactos han sido eliminados.');
+        } catch (err) {
+            console.error('Error al reiniciar datos:', err);
+            alert('Error al reiniciar datos: ' + err.message);
+        }
     };
 
     db.collection('pedidos')

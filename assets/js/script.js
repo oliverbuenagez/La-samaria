@@ -54,7 +54,7 @@ let db;
 // DOM Elements
 const productGrid = document.getElementById('product-grid');
 const categoriesContainer = document.querySelector('.categories');
-let categoryBtns = document.querySelectorAll('.category-btn');
+let categoryBtns = document.querySelectorAll('.category-card, .category-todos-btn');
 const cartSidebar = document.getElementById('cart-sidebar');
 const cartCount = document.querySelector('.cart-count');
 const cartTotal = document.getElementById('cart-total');
@@ -190,6 +190,11 @@ function checkStoreStatus() {
 function displayProducts(category) {
     currentCategory = category;
     const searchTerm = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
+    const heading = document.getElementById('section-heading');
+    if (heading) {
+        const cat = menuData.categorias.find(c => c.id === category);
+        heading.textContent = category === 'todos' ? 'Todos los productos' : cat?.nombre || '';
+    }
 
     let filteredProducts = category === 'todos' 
         ? products 
@@ -228,13 +233,21 @@ function displayProducts(category) {
 // Category Filter
 function renderCategoryButtons() {
     if (!categoriesContainer || typeof menuData === 'undefined') return;
-    categoriesContainer.innerHTML = [
-        '<button class="category-btn active" data-category="todos"><span class="cat-emoji">📋</span><span class="cat-name">Todos</span></button>',
-        ...menuData.categorias.map(category =>
-            `<button class="category-btn" data-category="${category.id}"><span class="cat-emoji">${category.emoji || '📋'}</span><span class="cat-name">${category.nombre}</span></button>`
-        )
-    ].join('');
-    categoryBtns = document.querySelectorAll('.category-btn');
+    categoriesContainer.innerHTML = `
+        <div class="category-todos">
+            <button class="category-todos-btn active" data-category="todos">
+                <span>📋</span> Todos
+            </button>
+        </div>
+        ${menuData.categorias.map(category =>
+            `<button class="category-card" data-category="${category.id}" 
+                     style="background-image: url('${categoryImages[category.id] || 'assets/img/hero.png'}')">
+                <div class="category-card-overlay"></div>
+                <span class="category-card-name">${category.nombre}</span>
+            </button>`
+        ).join('')}
+    `;
+    categoryBtns = document.querySelectorAll('.category-card, .category-todos-btn');
 }
 
 function setupCategoryFilters() {
@@ -243,6 +256,11 @@ function setupCategoryFilters() {
             categoryBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             displayProducts(btn.dataset.category);
+            const heading = document.getElementById('section-heading');
+            if (heading) {
+                const top = heading.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
         });
     });
 }
@@ -263,7 +281,11 @@ function setupFooterCategoryLinks() {
             const cat = link.dataset.category;
             const targetBtn = Array.from(categoryBtns).find(b => b.dataset.category === cat);
             if (targetBtn) targetBtn.click();
-            document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+            const heading = document.getElementById('section-heading');
+            if (heading) {
+                const top = heading.getBoundingClientRect().top + window.scrollY - 100;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
         });
     });
 }

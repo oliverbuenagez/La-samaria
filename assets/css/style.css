@@ -241,39 +241,105 @@ nav ul li a:hover::after {
 /* Category Filter */
 .categories {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
     margin-bottom: 3rem;
 }
 
-.category-btn {
-    padding: 1rem 0.5rem;
-    border-radius: 16px;
+/* Todos button (compact, full-width row) */
+.category-todos {
+    grid-column: 1 / -1;
+    margin-bottom: 0.25rem;
+}
+
+.category-todos-btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 12px;
     border: 1px solid var(--glass-border);
     background: var(--glass);
     color: var(--text);
     cursor: pointer;
     transition: var(--transition);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: inherit;
+}
+
+.category-todos-btn:hover,
+.category-todos-btn.active {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(255, 65, 108, 0.3);
+}
+
+/* Category Card */
+.category-card {
+    position: relative;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.82rem;
-    min-height: 88px;
+    justify-content: center;
+    gap: 0.6rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: var(--text);
+    font-family: inherit;
+    padding: 1rem;
+    width: 100%;
+}
+
+.category-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 100%);
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.category-card:hover .category-card-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.category-card.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.3);
+}
+
+.category-card-name {
+    position: relative;
+    z-index: 2;
+    font-size: 0.95rem;
+    font-weight: 700;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    padding: 0 0.5rem;
 }
 
-.category-btn .cat-emoji {
+/* Section Heading */
+#section-heading {
+    text-align: center;
     font-size: 1.8rem;
-    line-height: 1;
-}
-
-.category-btn.active, .category-btn:hover {
+    font-weight: 800;
     background: var(--primary-gradient);
-    border-color: transparent;
-    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
-    transform: translateY(-3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: -1rem 0 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Product Grid */
@@ -992,13 +1058,15 @@ footer {
 }
 
 .footer-section a[href^="https://wa.me"],
-.footer-section a[href^="mailto:"] {
+.footer-section a[href^="mailto:"],
+.footer-section a[href^="https://maps.google.com"] {
     display: inline;
     color: var(--text-muted);
 }
 
 .footer-section a[href^="https://wa.me"]:hover,
-.footer-section a[href^="mailto:"]:hover {
+.footer-section a[href^="mailto:"]:hover,
+.footer-section a[href^="https://maps.google.com"]:hover {
     color: var(--primary);
 }
 
@@ -1108,16 +1176,14 @@ footer {
         font-size: 2rem;
     }
     .categories {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 0.6rem;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.8rem;
     }
-    .category-btn {
-        padding: 0.8rem 0.4rem;
-        font-size: 0.78rem;
-        min-height: 76px;
+    .category-card {
+        height: 160px;
     }
-    .category-btn .cat-emoji {
-        font-size: 1.5rem;
+    .category-card-name {
+        font-size: 0.85rem;
     }
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -1199,15 +1265,13 @@ footer {
     }
     .categories {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        gap: 0.6rem;
     }
-    .category-btn {
-        padding: 0.7rem 0.3rem;
-        font-size: 0.72rem;
-        min-height: 70px;
+    .category-card {
+        height: 140px;
     }
-    .category-btn .cat-emoji {
-        font-size: 1.3rem;
+    .category-card-name {
+        font-size: 0.8rem;
     }
     .search-bar {
         margin: -0.5rem auto 1.5rem;

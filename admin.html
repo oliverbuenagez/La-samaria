@@ -11,44 +11,88 @@
   <link rel="stylesheet" href="assets/css/admin.css" />
 </head>
 <body class="auth-checking">
-  <div class="admin-header">
-    <div>
-      <h1 class="admin-header__title">LA SAMARIA</h1>
-      <p class="admin-header__subtitle">Panel de Pedidos — Tiempo Real</p>
-      <p class="admin-user" id="admin-user"></p>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar__left">
+      <h1 class="topbar__title">LA SAMARIA</h1>
+      <p class="topbar__subtitle">Panel de Pedidos — Tiempo Real</p>
     </div>
-    <button class="logout-btn" id="logout-btn" type="button"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
-    <div class="admin-stats">
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="total-periodo">$0</div>
-        <div class="admin-stats__label">Ventas Periodo</div>
+    <div class="topbar__right">
+      <p class="admin-user" id="admin-user"></p>
+      <button class="logout-btn" id="logout-btn" type="button"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+    </div>
+  </div>
+
+  <!-- Stats Dashboard -->
+  <div class="stats-dashboard">
+    <div class="stat-card stat-card--sales">
+      <div class="stat-card__icon"><i class="fas fa-dollar-sign"></i></div>
+      <div>
+        <div class="stat-card__number" id="total-periodo">$0</div>
+        <div class="stat-card__label">Ventas Período</div>
       </div>
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="count-nuevos">0</div>
-        <div class="admin-stats__label">Nuevos</div>
+    </div>
+    <div class="stat-card stat-card--new">
+      <div class="stat-card__icon"><i class="fas fa-shopping-basket"></i></div>
+      <div>
+        <div class="stat-card__number" id="count-nuevos">0</div>
+        <div class="stat-card__label">Nuevos</div>
       </div>
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="count-pendientes">0</div>
-        <div class="admin-stats__label">En Preparación</div>
+    </div>
+    <div class="stat-card stat-card--pending">
+      <div class="stat-card__icon"><i class="fas fa-clock"></i></div>
+      <div>
+        <div class="stat-card__number" id="count-pendientes">0</div>
+        <div class="stat-card__label">En Preparación</div>
       </div>
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="count-entregados">0</div>
-        <div class="admin-stats__label">Entregados</div>
+    </div>
+    <div class="stat-card stat-card--done">
+      <div class="stat-card__icon"><i class="fas fa-check-circle"></i></div>
+      <div>
+        <div class="stat-card__number" id="count-entregados">0</div>
+        <div class="stat-card__label">Entregados</div>
       </div>
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="count-cancelados">0</div>
-        <div class="admin-stats__label">Cancelados</div>
+    </div>
+    <div class="stat-card stat-card--cancelled">
+      <div class="stat-card__icon"><i class="fas fa-times-circle"></i></div>
+      <div>
+        <div class="stat-card__number" id="count-cancelados">0</div>
+        <div class="stat-card__label">Cancelados</div>
       </div>
-      <div class="admin-stats__box">
-        <div class="admin-stats__number" id="ticket-promedio">$0</div>
-        <div class="admin-stats__label">Ticket Promedio</div>
+    </div>
+    <div class="stat-card stat-card--avg">
+      <div class="stat-card__icon"><i class="fas fa-receipt"></i></div>
+      <div>
+        <div class="stat-card__number" id="ticket-promedio">$0</div>
+        <div class="stat-card__label">Ticket Promedio</div>
       </div>
     </div>
   </div>
 
+  <!-- Payment Stats -->
+  <div class="stats-dashboard stats-dashboard--pagos" id="pagos-stats">
+    <div class="stat-card stat-card--small">
+      <div class="stat-card__number" id="pago-efectivo">$0</div>
+      <div class="stat-card__label">Efectivo</div>
+    </div>
+    <div class="stat-card stat-card--small">
+      <div class="stat-card__number" id="pago-nequi">$0</div>
+      <div class="stat-card__label">Nequi / Daviplata</div>
+    </div>
+    <div class="stat-card stat-card--small">
+      <div class="stat-card__number" id="pago-transferencia">$0</div>
+      <div class="stat-card__label">Transferencia</div>
+    </div>
+    <div class="stat-card stat-card--small">
+      <div class="stat-card__number" id="pago-datafono">$0</div>
+      <div class="stat-card__label">Datáfono</div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
   <div class="admin-toolbar">
     <div>
-      <p class="admin-toolbar__label">Periodo</p>
+      <p class="admin-toolbar__label">Filtrar por fecha</p>
       <div class="admin-filters" aria-label="Filtrar pedidos por fecha">
         <button class="admin-date-filter active" type="button" data-range="hoy">Hoy</button>
         <button class="admin-date-filter" type="button" data-range="ayer">Ayer</button>
@@ -57,16 +101,13 @@
         <button class="admin-date-filter" type="button" data-range="todos">Todos</button>
       </div>
     </div>
-    <button class="btn--csv" onclick="window.exportCSV()" type="button"><i class="fas fa-file-csv"></i> Exportar CSV</button>
+    <div class="admin-toolbar__actions">
+      <button class="btn--csv" onclick="window.exportCSV()" type="button"><i class="fas fa-file-csv"></i> Exportar CSV</button>
+      <button class="btn--reset" onclick="window.resetAllData()" type="button"><i class="fas fa-trash"></i> Reiniciar datos</button>
+    </div>
   </div>
 
-  <div class="admin-stats admin-stats--pagos" id="pagos-stats">
-    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-efectivo">$0</div><div class="admin-stats__label">Efectivo</div></div>
-    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-nequi">$0</div><div class="admin-stats__label">Nequi / Daviplata</div></div>
-    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-transferencia">$0</div><div class="admin-stats__label">Transferencia</div></div>
-    <div class="admin-stats__box"><div class="admin-stats__number" id="pago-datafono">$0</div><div class="admin-stats__label">Datáfono</div></div>
-  </div>
-
+  <!-- Status Filter -->
   <div class="admin-filters" aria-label="Filtrar pedidos por estado">
     <button class="admin-filter active" type="button" data-filter="todos">Todos</button>
     <button class="admin-filter" type="button" data-filter="nuevo">Nuevos</button>
@@ -76,22 +117,37 @@
     <button class="admin-filter" type="button" data-filter="cancelado">Cancelados</button>
   </div>
 
-  <div class="orders-grid" id="orders-grid">
-    <div class="empty-state">
-      <i class="fas fa-clock"></i>
-      <p>Esperando pedidos...</p>
+  <!-- Orders Section -->
+  <div class="section-panel">
+    <div class="section-panel__header">
+      <i class="fas fa-clipboard-list"></i>
+      <h2>Órdenes</h2>
+      <span class="section-panel__count" id="orders-count">0</span>
+    </div>
+    <div class="orders-grid" id="orders-grid">
+      <div class="empty-state">
+        <i class="fas fa-clock"></i>
+        <p>Esperando pedidos...</p>
+      </div>
     </div>
   </div>
 
-  <div class="section-divider"><i class="fas fa-envelope"></i> Mensajes de Contacto</div>
-  <div class="orders-grid" id="contacts-grid">
-    <div class="empty-state">
-      <i class="fas fa-inbox"></i>
-      <p>No hay mensajes aun</p>
+  <!-- Contacts Section -->
+  <div class="section-panel">
+    <div class="section-panel__header">
+      <i class="fas fa-envelope"></i>
+      <h2>Mensajes de Contacto</h2>
+      <span class="section-panel__count" id="contacts-count">0</span>
+    </div>
+    <div class="orders-grid" id="contacts-grid">
+      <div class="empty-state">
+        <i class="fas fa-inbox"></i>
+        <p>No hay mensajes aún</p>
+      </div>
     </div>
   </div>
 
-  <p class="admin-footer">Los pedidos aparecen automaticamente en tiempo real</p>
+  <p class="admin-footer">Los pedidos aparecen automáticamente en tiempo real</p>
 
   <script src="assets/js/admin.js"></script>
 </body>
